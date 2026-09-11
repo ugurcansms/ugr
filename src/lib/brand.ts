@@ -6,7 +6,7 @@ export const brand = {
   shortName: "UGR Ölçüm ve İklimlendirme",
   monogram: "U",
   tagline: "F-Gaz Emisyon",
-  phone: "0850 123 45 67",
+  phone: "0546 906 85 70",
   phoneHref: "tel:+908501234567",
   whatsappUrl: "https://wa.me/908501234567",
   email: "info@ugrolcum.com",
