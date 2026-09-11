@@ -9,7 +9,7 @@ Kategorize edilmiş. `[ ]` = açık, `[x]` = tamamlandı. İş bitince işaretle
 
 ## İçerik / onay
 - [ ] Hakkımızda hikâye, değerler, sertifikalar — müşteri onayı sonrası gerçek metinlerle doldur.
-- [ ] İletişim bilgileri (telefon, e-posta, adres) gerçek değerlerle güncelle (`src/lib/brand.ts`).
+- [x] İletişim bilgileri (telefon, e-posta, adres) gerçek değerlerle güncellendi — `src/lib/brand.ts` (2026-09).
 - [x] F-Gaz'a özel hizmet sayfası eklendi → `/hizmetler/f-gaz-sizinti-kontrolu-ve-ekomvet` (index 04; nav dropdown + footer). Slug'lar tam başlık: `montaj-ve-kurulum` / `periyodik-bakim-ve-sistem-kontrolu` / `onarim-ve-teknik-servis`.
 
 ## SEO / başlıklar

@@ -8,10 +8,11 @@ export const brand = {
   tagline: "F-Gaz Emisyon",
   phone: "0546 906 85 70",
   phoneHref: "tel:+905469068570",
-  whatsappUrl: "https://wa.me/908501234567",
-  email: "info@ugrolcum.com",
-  emailHref: "mailto:info@ugriklimlnedirme.com",
-  address: "Merkez Mah. Soğutma Cad. No:12, İstanbul",
-  fgasNo: "F-Gaz Yetki No: FY-2026-0841",
+  whatsappUrl: "https://wa.me/905469068570",
+  email: "info@ugriklimlendirme.com",
+  emailHref: "mailto:info@ugriklimlendirme.com",
+  address: "Atatürk Mahallesi, Darılmaz Sokak No: 14-16B, Sancaktepe/İstanbul",
+  // fgasNo kaldırıldı (2026-09): F-Gaz yetki belgesi henüz alınmadı.
+  // Belge alınınca buraya `fgasNo` alanı geri eklenip iletisim sayfasında render edilebilir.
   workingHours: "7/24 Acil Destek · Hafta içi 08:00–18:00",
 } as const;

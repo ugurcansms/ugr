@@ -3,7 +3,6 @@
 ## Veri (planlı)
 - **Backend yok.** Tüm içerik statik mock (`src/lib/*` + sayfa içi sabitler). Form submit görsel, gerçek POST/API yok.
 - **Görseller placeholder** — `public/images/` içindeki 7 görsel örnek/stock. Gerçek firma fotoğrafı, teknisyen, marka logolu görsel yok.
-- **İletişim bilgileri placeholder** — telefon `0850 123 45 67`, e-posta `info@ugrolcum.com`, adres "Merkez Mah..." gerçek değil. `src/lib/brand.ts`'ten değiştirilir.
 - **Hakkımızda metinleri kurgu** — hikâye, değerler, sertifikalar örnek. Müşteri onayı sonrası düzenlenmeli.
 
 ## İşlevsel / UI

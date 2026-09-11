@@ -7,7 +7,7 @@
 - **Tüm sayfalar statik / SSG.** Anasayfa ve 4 detay sayfası build'de üretilir; çalışma zamanında render yok. Dinamik yok → yüksek TTFB potansiyeli.
 - **Görseller `next/image`** — `fill`+`sizes`, lazy (default), otomatik WebP/AVIF, doğru boyutlandırma. Hero `priority` (LCP).
 - **Fontlar `next/font/google`** — self-hosted (Google'a giden yok), `display:swap`, değişken font, `preload` otomatik. `font-[430]` gibi yarı-adım ağırlıklar değişken fonttan gelir (ekstra dosya yüklemez).
-- **Küçük client JS** — yalnız `site-nav`, `contact-form`, `cta`, `hero` client. Geri kalan Server. Client sınırı az.
+- **Küçük client JS** — yalnız `site-nav`, `contact-form`, `cta`, `hero` client. Geri kalan Server. Client sınırı az. 2026-09'da buna Vercel Analytics'in enjekte ettiği küçük script eklendi (`layout.tsx`) — sayfa ağırlığına etkisi ihmal edilebilir, ama ilk dış çalışma-zamanı isteği olduğu için Lighthouse ölçümünde ağ sekmesinde görünecek.
 - **Turbopack** build; Tailwind v4 (CSS küçük, üretilmeyen utility paketlenmez).
 
 ## Risk / izlenecek alanlar

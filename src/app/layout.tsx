@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { ScrollTopButton } from "@/components/scroll-top-button";
 import { SiteFooter } from "@/components/site-footer";
@@ -47,6 +48,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <ScrollTopButton />
+        <Analytics />
       </body>
     </html>
   );

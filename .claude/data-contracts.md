@@ -14,7 +14,6 @@ type Brand = {
   email: string;
   emailHref: string;     // mailto:...
   address: string;
-  fgasNo: string;
   workingHours: string;
 }
 ```

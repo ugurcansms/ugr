@@ -7,7 +7,8 @@ Bu bir server-rendered statik içerik sitesi. Şu an gerçek backend, form işle
 - **XSS / injection** — Tüm içerik statik TSX içinde, `dangerouslySetInnerHTML` **kullanılmadı**. `next/image` URL'leri sabit (kendi `public`). Kullanıcı girdisi render'a aktarılmıyor.
 - **Form (mock)** — `contact-form.tsx` hiçbir şey göndermiyor (sadece `setSubmitted`). Hatta backend gelmezse güvenli. Backend entegrasyonunda: sunucu tarafı doğrulama + sanitizasyon şart, client `required` yeterli değil.
 - **Bağımlılıklar** — önceki `npm audit` “0 vulnerabilities”. Bağımlılık kümesi küçük (Next, React, base-ui, shadcn, lucide, tailwind). Güncel tutulur.
-- **Dış servisler** — yalnız Google Fonts (`next/font` self-host eder, external fetch yok) ve build sırasında registry (shadcn). Çalışma zamanında dış çağrı yok.
+- **Dış servisler** — Google Fonts (`next/font` self-host eder, external fetch yok) ve build sırasında registry (shadcn). **2026-09'dan beri çalışma zamanında bir dış çağrı var:** Vercel Analytics (`@vercel/analytics/next`, root `layout.tsx`'e monte) ziyaret verisini Vercel'e gönderir. Üçüncü taraf script; ilk parti değil.
+- **Analytics / gizlilik** — Vercel Analytics çerez kullanmaz ve kişisel veri toplamaz (ürün iddiası), ancak yine de dışarıya giden bir veri akışıdır. KVKK/GDPR kapsamında çerez/consent banner'ı gerekirse Analytics kararı yeniden değerlendirilmeli. Panelde etkinleştirilmezse script çalışsa da veri toplanmaz.
 
 ## İşlem güvenliği (bu projede)
 - `next dev` / `next start` localhost'ta çalışır; üretim deploy'da `next start` + HTTPS ters-proxy beklenir.

@@ -111,12 +111,7 @@ export function SiteFooter() {
           <p className="text-[13px] font-[430] text-slate-gray">
             © {new Date().getFullYear()} {brand.name} · Tüm hakları saklıdır.
           </p>
-          {/* 
-          <p className="text-[13px] font-[430] text-slate-gray">
-            {brand.fgasNo} · TSE Hizmet Yeterlilik Belgesi
-          </p>
-          */}
-          {/* Design credit 
+          {/* Design credit
           <p className="text-[13px] font-[430] text-slate-gray">
             Design by{" "}
             <a

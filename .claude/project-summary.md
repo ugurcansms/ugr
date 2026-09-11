@@ -7,8 +7,7 @@ Bir klima bakım, onarım ve F-Gaz ölçüm firması için modern, çok sayfalı
 - **Tam ad:** UGR Ölçüm ve İklimlendirme
 - **Kısa ad / logoda:** UGR Ölçüm ve İklimlendirme  ·  **Monogram:** "U"
 - **Tagline:** F-Gaz Emisyon (yalnızca `brand.ts` veri sabiti; nav/footer altında artık render edilmez — 2026-09) · **Footer açıklama:** klima montaj/bakım/onarım + F-Gaz ölçüm + 7/24 acil destek
-- **İletişim (placeholder):** 0850 123 45 67 · info@ugrolcum.com · Merkez Mah. Soğutma Cad. No:12, İstanbul
-- **F-Gaz yetki no:** FY-2026-0841
+- **İletişim:** 0546 906 85 70 · info@ugriklimlendirme.com · Atatürk Mahallesi, Darılmaz Sokak No: 14-16B, Sancaktepe/İstanbul (2026-09'da placeholder'dan gerçek değerlere geçildi)
 
 Tek düzenleme noktası: `src/lib/brand.ts`. Marka adı/yöntemi değişirse yalnızca bu dosya değişir.
 

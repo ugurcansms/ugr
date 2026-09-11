@@ -83,19 +83,19 @@ export default function IletisimPage() {
                     <span className="grid size-11 shrink-0 place-items-center rounded-full bg-ink-black text-paper-white">
                       <item.icon className="size-5" />
                     </span>
-                    <div>
+                    <div className="min-w-0">
                       <div className="text-[12px] font-[480] uppercase tracking-[0.1em] text-ash-gray">
                         {item.label}
                       </div>
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="mt-1 block text-[17px] font-[480] text-ink-black underline-offset-4 hover:underline"
+                          className="mt-1 block wrap-anywhere text-[17px] font-[480] text-ink-black underline-offset-4 hover:underline"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <div className="mt-1 text-[16px] font-[480] leading-snug text-ink-black">
+                        <div className="mt-1 wrap-anywhere text-[16px] font-[480] leading-snug text-ink-black">
                           {item.value}
                         </div>
                       )}
@@ -104,7 +104,7 @@ export default function IletisimPage() {
                 ))}
               </ul>
               <div className="mt-8 border-t border-ink-black/[0.08] pt-6 text-[13px] font-[430] text-slate-gray">
-                {brand.fgasNo} · TSE Hizmet Yeterlilik Belgesi
+                TSE Hizmet Yeterlilik Belgesi
               </div>
             </div>
           </div>
