@@ -1,0 +1,227 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sohne);
+  --font-mono: var(--font-sohne);
+  --font-heading: var(--font-sohne);
+  --font-signifier: var(--font-signifier);
+  --font-sohne: var(--font-sohne);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ---------------------------------------------------------------------------
+   DESIGN.md — "Steep" tokens, mapped for an HVAC / F-Gas service brand
+   Palette: achromatic system + a single warm peach/brown accent pair.
+--------------------------------------------------------------------------- */
+@theme {
+  --color-ink-black: #17191c;
+  --color-paper-white: #ffffff;
+  --color-mist-gray: #f2f2f3;
+  --color-fog-white: #fafafb;
+  --color-slate-gray: #777b86;
+  --color-ash-gray: #979799;
+  --color-smoke-gray: #a3a6af;
+  --color-blush-peach: #fbe1d1;
+  --color-sienna-brown: #5d2a1a;
+
+  /* Marka aksanı — yalnız WhatsApp yönlendirme kutusunda kullanılır. */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1ebe5d;
+
+  --shadow-artifact:
+    0 0 0 1px rgba(4, 23, 43, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-pop:
+    0 0 0 1px rgba(4, 23, 43, 0.05), 0 8px 40px 0px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  --radius: 1.5rem;
+  --background: #ffffff;
+  --foreground: #17191c;
+  --card: #f2f2f3;
+  --card-foreground: #17191c;
+  --popover: #ffffff;
+  --popover-foreground: #17191c;
+  --primary: #17191c;
+  --primary-foreground: #ffffff;
+  --secondary: #fafafb;
+  --secondary-foreground: #17191c;
+  --muted: #f2f2f3;
+  --muted-foreground: #777b86;
+  --accent: #fbe1d1;
+  --accent-foreground: #5d2a1a;
+  --destructive: #5d2a1a;
+  --border: #ececec;
+  --input: #ececec;
+  --ring: #17191c;
+  --chart-1: #17191c;
+  --chart-2: #777b86;
+  --chart-3: #a3a6af;
+  --chart-4: #5d2a1a;
+  --chart-5: #fbe1d1;
+  --sidebar: #fafafb;
+  --sidebar-foreground: #17191c;
+  --sidebar-primary: #17191c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fbe1d1;
+  --sidebar-accent-foreground: #5d2a1a;
+  --sidebar-border: #ececec;
+  --sidebar-ring: #17191c;
+}
+
+.dark {
+  --background: #ffffff;
+  --foreground: #17191c;
+  --card: #f2f2f3;
+  --card-foreground: #17191c;
+  --popover: #ffffff;
+  --popover-foreground: #17191c;
+  --primary: #17191c;
+  --primary-foreground: #ffffff;
+  --secondary: #fafafb;
+  --secondary-foreground: #17191c;
+  --muted: #f2f2f3;
+  --muted-foreground: #777b86;
+  --accent: #fbe1d1;
+  --accent-foreground: #5d2a1a;
+  --destructive: #5d2a1a;
+  --border: #ececec;
+  --input: #ececec;
+  --ring: #17191c;
+  --sidebar: #fafafb;
+  --sidebar-foreground: #17191c;
+  --sidebar-primary: #17191c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fbe1d1;
+  --sidebar-accent-foreground: #5d2a1a;
+  --sidebar-border: #ececec;
+  --sidebar-ring: #17191c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background font-sohne text-foreground antialiased;
+  }
+
+  ::selection {
+    background: var(--color-blush-peach);
+    color: var(--color-sienna-brown);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Motion — quiet, editorial. Respects reduced motion.
+--------------------------------------------------------------------------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade {
+  animation: fade 1s ease both;
+}
+
+/* DENEME — hero arka plan görseli yavaş zoom in/out (onay sonrası geri alınabilir) */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 46s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-fade,
+  .animate-hero-zoom,
+  .animate-marquee {
+    animation: none;
+  }
+}

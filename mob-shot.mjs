@@ -1,0 +1,10 @@
+import { chromium, devices } from 'playwright';
+const browser = await chromium.launch({ executablePath: '/opt/brave.com/brave/brave', args: ['--no-sandbox','--disable-gpu'] });
+const ctx = await browser.newContext({ ...devices['iPhone 12'] });
+const page = await ctx.newPage();
+await page.goto('http://localhost:3000/iletisim', { waitUntil: 'networkidle' });
+await page.waitForTimeout(600);
+await page.screenshot({ path: '/tmp/mob-iletisim-full.png', fullPage: true });
+const h = await page.evaluate(() => document.body.scrollHeight);
+console.log('tam yükseklik:', h, 'px');
+await browser.close();
