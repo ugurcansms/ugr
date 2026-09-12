@@ -18,7 +18,7 @@ Kök `DESIGN.md` "Steep" — editoryal serif başlıklar, neredeyse tek renkli b
 Bireysel konutlar + kurumsal (otel, ofis). Amaç: güven vermek ("belgeli, ölçüme dayalı, 7/24") ve servis talebi / F-Gaz belgelendirme dönüşümü sağlamak.
 
 ## Mevcut durum
-- **Backend yok.** Tüm veri statik mock (blog, hizmetler, SSS, istatistik). Form submit görsel (client state) — API çağrısı yok. Backend entegrasyonu planlandı, şemalar: [data-contracts.md](data-contracts.md).
+- **Kendi backend'imiz yok.** İçerik verisi statik (blog, hizmetler, SSS). İletişim formu **gerçekten gönderiyor** ama bizim sunucumuzdan geçmiyor: tarayıcı → Web3Forms (2026-09). Şemalar: [data-contracts.md](data-contracts.md).
 - Tasarım tamamlandı ve onaylandı; 16 sayfa statik/SSG üretiliyor.
 
 ## Çalıştırma

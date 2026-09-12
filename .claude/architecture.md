@@ -9,7 +9,7 @@
 | `/hizmetler/[slug]` | **SSG** | 4 kategori detayı — slug: `montaj-ve-kurulum`, `periyodik-bakim-ve-sistem-kontrolu`, `onarim-ve-teknik-servis`, `f-gaz-sizinti-kontrolu-ve-ekomvet` |
 | `/blog` | statik | 9 yazının listesi |
 | `/blog/[slug]` | **SSG** | Makale + ilgili yazılar — 9 slug |
-| `/iletisim` | statik | Mock form + iletişim bilgileri |
+| `/iletisim` | statik | Servis formu (Web3Forms POST, client) + iletişim bilgileri |
 
 SSG rotaları `generateStaticParams` + `dynamicParams = false` + `notFound()` kullanır. Blog ve hizmet `[slug]` kalıpları birebir aynı; `params` **Promise** (await edilir).
 
@@ -26,8 +26,8 @@ SSG rotaları `generateStaticParams` + `dynamicParams = false` + `notFound()` ku
 **Veri katmanı** — `src/lib/*`: marka, nav, hizmet, blog, utils. Statik sabitler (mock). Backend entegrasyonu bu katmanı besleyecek.
 
 ## Veri akışı
-- Tüm sayfalar Server Component olduğundan veri doğrudan `import` edilir (API yok, client fetch yok).
-- Yalnızca `site-nav` (scroll + dropdown + sheet), `contact-form` (mock submit), `cta` / `hero` içindeki interaktif parçalar client. Bunlar `"use client"` ile ayrılmıştır.
+- **İçerik** verisi doğrudan `import` edilir (içerik API'si yok). Tek istisna: `contact-form` gönderimde `api.web3forms.com`'a `fetch` atar (2026-09) — bu bir içerik veri akışı değil, form gönderimidir.
+- Yalnızca `site-nav` (scroll + dropdown + sheet), `contact-form` (Web3Forms submit), `cta` / `hero` içindeki interaktif parçalar client. Bunlar `"use client"` ile ayrılmıştır.
 - `cn()` (`lib/utils.ts`) sınıf birleştirme için her yerde kullanılır.
 
 ## Animasyon & görsel

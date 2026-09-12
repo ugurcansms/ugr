@@ -7,6 +7,8 @@ ugr/
 ├── DESIGN.md                  # Steep tasarım sistemi (kaynak, düzenleme: ui-rules.md)
 ├── components.json            # shadcn yapılandırması (base-nova, lucide)
 ├── next.config.ts             # boş (değişiklik yok)
+├── .env.example               # NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY şablonu — commit edilir
+├── .env.local                 # gerçek key — git'e GİRMEZ (.gitignore: `.env*` + `!.env.example`)
 ├── tsconfig.json              # "@/*" → "./src/*" (typescript path alias)
 ├── public/images/             # 7 örnek görsel (gerçek ile değiştirilecek)
 └── src/
@@ -32,7 +34,7 @@ ugr/
     │   ├── blog-section.tsx   # Anasayfa Güncel (son 3 yazı)
     │   ├── blog-card.tsx      # Yeniden kullanılabilir blog kartı
     │   ├── blog-pagination.tsx # Blog liste sayfalama (Önceki/Sonraki pill + Sayfa X/Y)
-    │   ├── contact-form.tsx   # Mock servis formu (client)
+    │   ├── contact-form.tsx   # Servis formu — Web3Forms POST (client, honeypot + durum makinesi)
     │   ├── scroll-top-button.tsx # Sağ altta yüzen "sayfa başına dön" (client, tüm rotalar)
     │   ├── form-field.tsx     # El yazımı Input/Textarea/Select/Field
     │   ├── cta.tsx            # Anasayfa İletişim özeti (iki sütunlu, fotoğraflı)

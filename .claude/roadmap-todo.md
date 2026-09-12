@@ -3,7 +3,9 @@
 Kategorize edilmiş. `[ ]` = açık, `[x]` = tamamlandı. İş bitince işaretle ve bu dosyayı güncelle.
 
 ## Backend / veri (en büyük)
-- [ ] İletişim formu gerçek endpoint'e bağla (şu an client state). Şema: `data-contracts.md` "Form POST /iletisim".
+- [x] İletişim formu gerçek endpoint'e bağlandı — Web3Forms, tarayıcıdan doğrudan (2026-09). Sözleşme: `data-contracts.md` "Form gönderimi — Web3Forms". `route.ts` yok, olmayacak (karar #25).
+- [ ] **KVKK aydınlatma metni / gizlilik sayfası** — form verisi artık yurt dışındaki bir üçüncü tarafa gidiyor. Formun yayına alınmasından önce değerlendirilmeli (bkz. security.md, known-limitations.md).
+- [ ] Web3Forms kotasını (aylık 250) izle; aşılacaksa ücretli plana geç ya da uyarı mekanizması kur.
 - [ ] Blog, hizmetler, SSS, marka verisi CMS/API'den çekilebilir hale getir (şu an `src/lib/*` statik).
 - [ ] Görseller gerçek firma fotoğraflarıyla değiştir (`public/images`).
 
@@ -18,7 +20,7 @@ Kategorize edilmiş. `[ ]` = açık, `[x]` = tamamlandı. İş bitince işaretle
 - [ ] JSON-LD (LocalBusiness + Service) ekle.
 
 ## UI / erişilebilirlik
-- [ ] Form: e-posta/telefon doğrulama + `aria-describedby` hata mesajları (native required ötesi).
+- [ ] Form: **alan bazlı** e-posta/telefon doğrulama + alan başına `aria-describedby` hata mesajları. (Form *düzeyinde* hata + `role="alert"` + odak taşıma 2026-09'da yapıldı; kalan kısım alan bazlı doğrulamadır.)
 - [ ] Accordion animasyonu keyframe'lerini `globals.css`'e ekle (şu an sessizce atlanıyor) — isteğe bağlı.
 - [ ] Mobil `Sheet` içinde "Hizmetler" alt listesi için ayrı görsel ayrım (istenirse).
 
