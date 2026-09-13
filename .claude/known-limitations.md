@@ -12,10 +12,13 @@
 - **Honeypot sessiz yanlış-pozitif üretebilir** — `website` alanı otomatik doldurma (tarayıcı profili / parola yöneticisi) tarafından doldurulursa gönderim sessizce yutulur: ziyaretçi "Talebiniz alındı." görür, talep hiçbir yere düşmez. `display:none` + `autocomplete=off` + `data-lpignore`/`data-1p-ignore` ile büyük ölçüde engellendi ama **sıfırlanmadı**. Açıklanamayan eksik taleplerde ilk şüpheli budur.
 - **Env değişkeni build zamanında gömülür** — deploy, `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` tanımlı olmadan build edilirse site **kalıcı olarak ölü bir formla** yayınlanır: ziyaretçi her gönderimde hata görür, istek hiç atılmaz. Build zamanı kontrolü bilinçli olarak yok (temiz klonda `npm run build`'i kırmamak için); Vercel'de değişkenin tanımlı olduğu ayrıca doğrulanmalı.
 - **Mobil çok geniş dropdown yok** — `Sheet` içinde düz liste (desktop dropdown'ı mobilde yeniden kullanılmadı).
+- **CO₂e hesaplayıcısı hukuki dayanak değil** — `fgas.tsx` sağ sütunundaki araç yalnız **tonaja** göre bant verir. Yönetmelik, **sızıntı tespit sistemi bulunan** cihazlarda kontrol sürelerini iki katına çıkarır; bu kural forma girmedi. Ayrıca listedeki **R-22 bir HCFC'dir** (Montreal Protokolü), F-Gaz yönetmeliği kapsamında değildir. Sonucun altında "bilgilendirme amaçlıdır, resmî rapor yerine geçmez" notu vardır. Üç nokta da kullanıcıya bildirildi, karar bekliyor.
+- **KIP değerlerinin kaynağı doğrulanmadı** — `src/lib/fgas.ts`'teki 19 gaz değeri işletmenin verdiği liste; yönetmelik ekiyle karşılaştırılmadı. Eşikler bu değerlere bağlı olduğu için yanlış bir KIP yanlış banda götürür.
+- **Hesaplayıcının çıktısı kaydedilmiyor** — anlık araç, gönderim yok (kullanıcı kararı). Hangi gaz/miktar sorgulandığına dair hiçbir ölçüm ya da lead verisi toplanmaz.
 - **`blog` / `hizmetler` sayfaları `.claude` belgelerine bağlı değil** — normal.
 
 ## Tasarım / içerik
-- **Şeftali kartı tekilliği** — yalnızca anasayfa `fgas.tsx`'te. Yeni bir şeftali yüzeyi eklerken kuralı bozma.
+- **Şeftali kartı tekilliği** — yalnızca anasayfa `fgas.tsx`'te (2026-09'da 2. sütundan 1. sütunun altına taşındı; tekilliği bozmadı). Yeni bir şeftali yüzeyi eklerken kuralı bozma.
 - **Fontlar** — Signifier→Source Serif 4, Sohne→Inter (DESIGN.md önerdiği bedava yedekler). Orijinal fontlar lisanslı değil; değişirse `layout.tsx` yeterli.
 - **SEO / OG** — yalnızca temel `metadata` + `generateMetadata`. `sitemap.xml`, `robots.txt`, `JSON-LD`, OG görselleri (opengraph-image) `og:image`) **yok**.
 

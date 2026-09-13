@@ -29,7 +29,8 @@ ugr/
     │   ├── about-summary.tsx  # Anasayfa Hakkımızda özeti (→ /hakkimizda)
     │   ├── services-summary.tsx # Anasayfa Hizmet özeti (kart→detay)
     │   ├── services.tsx       # Hizmet tam liste (detay sayfasında kullanılır)
-    │   ├── fgas.tsx           # F-Gaz bölümü (tek şeftali kartı + rapor artefaktı)
+    │   ├── fgas.tsx           # F-Gaz bölümü (metin + tek şeftali kartı solda, hesaplayıcı sağda)
+    │   ├── fgas-calculator.tsx # Ton CO₂e hesaplayıcı (client, anlık — gönderim yok)
     │   ├── process.tsx        # 4 adım süreç
     │   ├── blog-section.tsx   # Anasayfa Güncel (son 3 yazı)
     │   ├── blog-card.tsx      # Yeniden kullanılabilir blog kartı
@@ -50,7 +51,8 @@ ugr/
     └── lib/
         ├── brand.ts           # Marka sabitleri
         ├── nav.ts             # navLinks (+ hizmet children)
-        ├── services.ts        # hizmet kategorileri + processSteps + stats + getServiceCategory
+        ├── services.ts        # hizmet kategorileri + processSteps + getServiceCategory
         ├── blog.ts            # blogPosts + getBlogPost/getRelatedPosts/getLatestPosts
+        ├── fgas.ts            # KIP tablosu (REFRIGERANTS) + CO₂e bantları + formül/ayrıştırma
         └── utils.ts           # cn() (clsx + tailwind-merge)
 ```

@@ -10,6 +10,7 @@ Kategorize edilmiş. `[ ]` = açık, `[x]` = tamamlandı. İş bitince işaretle
 - [ ] Görseller gerçek firma fotoğraflarıyla değiştir (`public/images`).
 
 ## İçerik / onay
+- [ ] **CO₂e hesaplayıcısının hukuki gözden geçirmesi** (karar #26) — (1) KIP değerlerini yönetmelik ekiyle karşılaştır, (2) sızıntı tespit sistemi olan cihazlarda sürelerin iki katına çıktığı kuralı eklenmeli mi, (3) R-22 (HCFC, Montreal Protokolü) listede kalmalı mı. Ayrıca `fgas.tsx` şeftali kartındaki "Bakanlık **yetki belgemizle**" beyanı karar #24 ile çelişiyor — belge alınmadan bu bölüm daha görünür hale geldi.
 - [ ] Hakkımızda hikâye, değerler, sertifikalar — müşteri onayı sonrası gerçek metinlerle doldur.
 - [x] İletişim bilgileri (telefon, e-posta, adres) gerçek değerlerle güncellendi — `src/lib/brand.ts` (2026-09).
 - [x] F-Gaz'a özel hizmet sayfası eklendi → `/hizmetler/f-gaz-sizinti-kontrolu-ve-ekomvet` (index 04; nav dropdown + footer). Slug'lar tam başlık: `montaj-ve-kurulum` / `periyodik-bakim-ve-sistem-kontrolu` / `onarim-ve-teknik-servis`.

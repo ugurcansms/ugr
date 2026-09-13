@@ -16,6 +16,8 @@ Design sistem "Steep" üzerine kurulu. Erişilebilirlik, bileşen yazarken uygul
   - **Hata:** `role="alert"` + `tabIndex={-1}` + **odak taşıma**. `role="alert"` dinamik eklenen düğümde güvenilir duyurulur; odak taşıma da klavye kullanıcısını sayfa başından tekrar sekmekten kurtarır.
   - **Başarı:** form tamamen kalktığı için odak sonuç kartına taşınır (`tabIndex={-1}`) — bu hem duyuru hem konum sağlar. Karta ayrıca `role="status"` **konmadı**: canlı rol + odak birlikte çift duyuruya yol açar.
 - **Honeypot erişilebilirliği** — `website` alanı `tabIndex={-1}` + `aria-hidden` + `display:none`; klavye sırasına hiç girmez, ekran okuyucuya duyurulmaz.
+- **Canlı hesaplayıcı (2026-09, `fgas-calculator.tsx`)** — sonuç her tuş vuruşunda değiştiği için **tamamı canlı bölgeye konmadı**; konsaydı ekran okuyucu "1", "12", "125"… diye her karakterde okur ve aracı kullanılamaz hale getirirdi. Bunun yerine `role="status"` **yalnız bandı** duyurur (`Kaçak kontrol sıklığı: Yılda 1 kez`). Bu güvenli çünkü canlı bölge yalnız **metin gerçekten değiştiğinde** tetiklenir — bant ise sadece 5/50/500 eşikleri geçilirken değişir, yani en fazla 3 duyuru çıkar. Tonaj ve bant tablosu DOM'da normal metin olarak durur (gezinerek okunabilir). Bekleme bölgesiyle aynı desen: bölge içerik değişmeden önce DOM'da mevcuttur.
+- **Hesaplayıcı girdi doğrulaması** — ayrıştırılamayan dolu girdi alanın altında görünür uyarı **ve** `aria-invalid` üretir; sonuç sessizce boş kalmaz. Girdinin nasıl okunduğu ayrıca sonuçtaki formül satırında (`12,5 kg × GWP 2.088 ÷ 1000`) şeffaf gösterilir.
 
 ## Dikkat / bilinen noktalar
 - **Şeftali vurgusu** renk kontrastı açısından `sienna-brown` ile kullanılır; şeftali üstünde siyah metin kullanma.

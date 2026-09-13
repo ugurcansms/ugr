@@ -23,11 +23,12 @@ SSG rotaları `generateStaticParams` + `dynamicParams = false` + `notFound()` ku
 
 **UI primitifleri** — `src/components/ui/*`: shadcn base-nova. Tasarım token'ları `globals.css` @theme'den.
 
-**Veri katmanı** — `src/lib/*`: marka, nav, hizmet, blog, utils. Statik sabitler (mock). Backend entegrasyonu bu katmanı besleyecek.
+**Veri katmanı** — `src/lib/*`: marka, nav, hizmet, blog, fgas, utils. Statik sabitler (mock). Backend entegrasyonu bu katmanı besleyecek. `fgas.ts` bir backend sözleşmesi değil **referans veridir** (KIP tablosu + yönetmelik bantları) — backend gelince de statik kalır, yalnız değerleri güncellenebilir.
 
 ## Veri akışı
 - **İçerik** verisi doğrudan `import` edilir (içerik API'si yok). Tek istisna: `contact-form` gönderimde `api.web3forms.com`'a `fetch` atar (2026-09) — bu bir içerik veri akışı değil, form gönderimidir.
-- Yalnızca `site-nav` (scroll + dropdown + sheet), `contact-form` (Web3Forms submit), `cta` / `hero` içindeki interaktif parçalar client. Bunlar `"use client"` ile ayrılmıştır.
+- Yalnızca `site-nav` (scroll + dropdown + sheet), `contact-form` (Web3Forms submit), `fgas-calculator` (anlık CO₂e hesabı — istemci içi, ağ çağrısı yok), `cta` / `hero` içindeki interaktif parçalar client. Bunlar `"use client"` ile ayrılmıştır.
+- **Anasayfa F-Gaz bölümü** — `fgas.tsx` bir RSC'dir; yalnız hesaplayıcı `fgas-calculator.tsx` client'a ayrılır ("en küçük parçada `use client`" kuralı). Hesaplayıcı **ağ çağrısı yapmaz**; `src/lib/fgas.ts`'teki saf fonksiyonlarla (`toCo2eTonnes` / `bandFor` / `parseChargeKg`) istemci içinde hesaplar. Bu yüzden `/` rotası statik kalmaya devam eder ve "çalışma zamanında dış çağrı yok" özelliği (Analytics hariç) bozulmaz.
 - `cn()` (`lib/utils.ts`) sınıf birleştirme için her yerde kullanılır.
 
 ## Animasyon & görsel

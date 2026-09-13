@@ -1,5 +1,6 @@
 import { Check, Snowflake } from "lucide-react";
 
+import { FgasCalculator } from "@/components/fgas-calculator";
 import { SectionTag } from "@/components/section-tag";
 
 const checks = [
@@ -9,50 +10,11 @@ const checks = [
   "Zorunlu periyodik F-Gaz kontrolleri",
 ];
 
-function RadialGauge() {
-  const r = 48;
-  const c = 2 * Math.PI * r;
-  const fill = 0.82;
-  return (
-    <div className="relative grid size-[132px] place-items-center">
-      <svg viewBox="0 0 120 120" className="size-[132px]" aria-hidden="true">
-        <circle
-          cx="60"
-          cy="60"
-          r={r}
-          fill="none"
-          stroke="rgba(255,255,255,0.14)"
-          strokeWidth="8"
-        />
-        <circle
-          cx="60"
-          cy="60"
-          r={r}
-          fill="none"
-          stroke="#fbe1d1"
-          strokeWidth="8"
-          strokeLinecap="round"
-          strokeDasharray={`${c * fill} ${c}`}
-          transform="rotate(-90 60 60)"
-        />
-      </svg>
-      <div className="absolute flex flex-col items-center">
-        <span className="text-[24px] font-[500] leading-none tracking-[-0.01em] text-paper-white">
-          %82
-        </span>
-        <span className="mt-1 text-[11px] font-[430] text-ash-gray">
-          dolum oranı
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export function Fgas() {
   return (
     <section id="fgaz" className="scroll-mt-24 bg-paper-white py-24 md:py-32">
       <div className="mx-auto grid max-w-[1200px] items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-        {/* Copy */}
+        {/* Copy + sayfanın tek şeftali yüzeyi */}
         <div>
           <SectionTag>F-Gaz Yönetimi</SectionTag>
           <h2 className="mt-4 max-w-[16ch] font-signifier text-[clamp(36px,4.6vw,56px)] font-[400] leading-[1.2] tracking-[-0.015em] text-ink-black">
@@ -78,13 +40,9 @@ export function Fgas() {
             ))}
           </ul>
 
-
-        </div>
-
-        {/* Floating F-Gas report artifact */}
-        <div className="relative mx-auto w-full max-w-[420px] lg:mx-0 lg:justify-self-end">
-          {/* The single editorial peach card of the page */}
-          <div className="relative mt-10 overflow-hidden rounded-[24px] bg-blush-peach p-7 text-sienna-brown md:p-9">
+          {/* Sayfanın tek şeftali kartı — 2. sütundan buraya, metnin altına alındı
+              (hesaplayıcı 2. sütunu devraldı). */}
+          <div className="mt-10 overflow-hidden rounded-[24px] bg-blush-peach p-7 text-sienna-brown md:p-9">
             <div className="flex items-start justify-between gap-6">
               <div>
                 <p className="text-[12px] font-[500] uppercase tracking-[0.12em] opacity-75">
@@ -108,6 +66,9 @@ export function Fgas() {
             </div>
           </div>
         </div>
+
+        {/* Ton CO₂e hesaplayıcı */}
+        <FgasCalculator />
       </div>
     </section>
   );
