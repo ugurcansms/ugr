@@ -46,7 +46,11 @@ export type ControlBand = {
 
 /**
  * Kaçak kontrolü bantları — artan eşik sırasıyla. Sınırlar alt uçtan dahildir:
- * tam 50 ton CO₂e "6 ayda 1 kez" bandına, tam 500 ton "3 ayda 1 kez" bandına girer.
+ * tam 50 ton CO₂e "6 ayda 1 kez" bandına girer.
+ *
+ * 2026-09: yönetmelik değişti — 500 ton üstü "3 ayda 1 kez" bandı **kaldırıldı**;
+ * 50 tonun üzeri tek banttır. Yeni bant eklenirse artan eşik sırası korunmalı,
+ * `bandFor` sağlanan en yüksek eşiği seçer.
  */
 export const CONTROL_BANDS: ControlBand[] = [
   {
@@ -68,18 +72,10 @@ export const CONTROL_BANDS: ControlBand[] = [
   {
     id: "biannual",
     min: 50,
-    range: "50 – 500 ton",
+    range: "50 ton ve üzeri",
     interval: "6 ayda 1 kez",
     detail:
       "Kaçak kontrolü 6 ayda en az 1 kez (yılda 2 kez) yapılmalıdır.",
-  },
-  {
-    id: "quarterly",
-    min: 500,
-    range: "500 ton ve üzeri",
-    interval: "3 ayda 1 kez",
-    detail:
-      "Kaçak kontrolü 3 ayda en az 1 kez (yılda 4 kez) yapılmalıdır.",
   },
 ];
 

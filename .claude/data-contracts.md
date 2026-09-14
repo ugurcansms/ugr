@@ -107,6 +107,6 @@ type ControlBand = {
 ```
 
 - **Formül:** `toCo2eTonnes(kg, gwp) = (kg × gwp) / 1000`
-- **Bantlar (`CONTROL_BANDS`, artan eşik):** `min 0` → zorunluluk yok · `min 5` → yılda 1 · `min 50` → 6 ayda 1 · `min 500` → 3 ayda 1. `bandFor` sağlanan **en yüksek** eşiği seçer, yani tam 50 ton → 6 ay, tam 500 ton → 3 ay bandına düşer.
+- **Bantlar (`CONTROL_BANDS`, artan eşik, 2026-09'dan beri 3 adet):** `min 0` → zorunluluk yok · `min 5` → yılda 1 · `min 50` → 6 ayda 1. `bandFor` sağlanan **en yüksek** eşiği seçer, yani tam 50 ton → 6 ay bandına düşer. 500 ton üstü "3 ayda 1" bandı **yönetmelik değişikliğiyle kaldırıldı** (2026-09).
 - **`parseChargeKg`** Türkçe ayraç kuralını uygular: virgül ondalık, nokta **yalnızca tam üçlü gruplamada** (`^\d{1,3}(\.\d{3})+$`) binlik. Bu kural olmadan `Number("1.500")` = 1,5 olur (bkz. karar #26).
 - **KIP değerlerinin kaynağı işletme listesidir**, yönetmelik eki değil — hukuki bir dayanak gerekiyorsa değerler gözden geçirilmeli.

@@ -37,7 +37,7 @@ export function FgasCalculator() {
     <div className="rounded-[24px] bg-mist-gray p-7 md:p-8">
       {/* Canlı bölge bilinçli olarak yalnızca *bandı* duyurur: tonaj her tuş
           vuruşunda değiştiği için onu duyurmak ekran okuyucuyu okunamaz hale
-          getirir. Bant ise yalnızca 5/50/500 eşikleri geçilirken değişir ve
+          getirir. Bant ise yalnızca 5/50 eşikleri geçilirken değişir ve
           metin aynı kaldığında tarayıcı zaten duyuru tetiklemez.
           (Canlı bölgeler içerik değişmeden önce DOM'da olmalı, yoksa okunmaz.) */}
       <p role="status" className="sr-only">
